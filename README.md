@@ -1,5 +1,6 @@
 # apple-music-rpc
 A (working) apple music RPC for Discord
+[Screenshot](image.pmg)
 
 ## Install
 Requires NodeJS 14.x or later, Discord Desktop and macOS
