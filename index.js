@@ -18,8 +18,12 @@ function refreshRPC() {
         activity.state = `${data.artist} - ${data.album}`;
         activity.largeImageKey = 'icon';
         activity.largeImageText = 'Apple Music';
-        activity.startTimestamp = setTime(data.position)
-        activity.buttons = [{label:"Search on Apple Music",url:`https://music.apple.com/us/search?term=${encodeURIComponent(data.name)}`},{label:"Search on Spotify",url:`https://open.spotify.com/search/${encodeURIComponent(data.name)}`}]
+        if (data.state === 'playing') {
+            activity.startTimestamp = setTime(data.position)
+        }
+        if (data.duration !== '0') {
+            activity.buttons = [{label:"Search on Apple Music",url:`https://music.apple.com/us/search?term=${encodeURIComponent(data.name)}`},{label:"Search on Spotify",url:`https://open.spotify.com/search/${encodeURIComponent(data.name)}`}]
+        }
         client.setActivity(activity);
     });
 }
