@@ -24,7 +24,11 @@ function refreshRPC() {
         if (data.duration !== '0') {
             activity.buttons = [{label:"Search on Apple Music",url:`https://music.apple.com/us/search?term=${encodeURIComponent(data.name)}`},{label:"Search on Spotify",url:`https://open.spotify.com/search/${encodeURIComponent(data.name)}`}]
         }
-        client.setActivity(activity);
+        try {
+            client.setActivity(activity);
+        } catch(e) {
+            console.error(e)
+        }
     });
 }
 client.on('ready', () => {
