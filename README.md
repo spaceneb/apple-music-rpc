@@ -1,5 +1,5 @@
 # apple-music-rpc
-A (working) apple music RPC for Discord
+A (working) apple music RPC for Discord<br>
 ![Screenshot](image.png)
 
 ## Install
